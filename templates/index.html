@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    {{ moment.include_moment() }}
+  </head>
+  <body>
+    
+    <table style="width:40%; margin:auto; table-layout: fixed;">
+      {% for filename, mtime, size in files -%}
+      <tr>
+        <td><a href="{{ url_for('download', filename=filename) }}" download>{{ filename }}</a></td>
+        <td>{{ moment(mtime, local=False).format('DD.MM.YYYY HH:mm') }}</td>
+        <td style="text-align:right;">{{ size | byte_units }}</td>
+      </tr>
+      {% endfor -%}
+    </table>
+
+    <script type="text/javascript">
+      (() => {
+        const elems = document.querySelectorAll('a[href][download]');
+        elems.forEach(elem => {
+          elem.addEventListener('click', evt => {
+            const isDonwload = window.confirm('Would you like to download this file?');
+            if (!isDonwload) { evt.preventDefault(); }
+          });
+        });
+      })();
+    </script>
+
+  </body>
+</html>

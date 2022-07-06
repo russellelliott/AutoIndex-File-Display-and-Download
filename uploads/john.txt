@@ -1,0 +1,28 @@
+Name: John Doe
+Email: john.doe@email.com
+
+Education
+Bogus University
+B.S. Computer Science
+September 2002 - June 2006
+
+Skills
+Languages: Python, Javascript
+Frameworks: Flask, py4web, web2py, NodeJS, Apache, React
+
+About Me
+Smart, Confidence, Nerd
+
+Achievements
+Honor Roll
+President of Chess Club
+
+Interests
+Programming, Virtual/Augmented Reality, Machine Learning, Chess
+
+Coursework
+Python, Machine Learning, Virtual/Augmented Reality
+
+Work Experience
+Virtual/Augmented Reality Programmer
+Programmed Virtual/Augmented Reality simulation for Children's Discovery museum. Simulated animals and environments.
