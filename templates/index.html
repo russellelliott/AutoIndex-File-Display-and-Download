@@ -4,12 +4,26 @@
     <meta charset="utf-8">
     <title>Index</title>
     {{ moment.include_moment() }}
+    <style>
+      th, td {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     
-    <table style="width:40%; margin:auto; table-layout: fixed;">
+    <table style="margin:auto; table-layout: fixed;">
       {% for filename, mtime, size in files -%}
       <tr>
+        <th>Local File Path</th>
+        <th>Download Link</th>
+        <th>Date Modified</th>
+        <th>File Size</th>
+
+      </tr>
+      <tr>
+        <!--<td><a href="./{{variable}}/{{filename}}">{{ filename }}</a></td>-->
+        <td>file://{{variable}}/{{filename}}</td>
         <td><a href="{{ url_for('download', filename=filename) }}" download>{{ filename }}</a></td>
         <td>{{ moment(mtime, local=False).format('DD.MM.YYYY HH:mm') }}</td>
         <td style="text-align:right;">{{ size | byte_units }}</td>

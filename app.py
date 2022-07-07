@@ -50,7 +50,7 @@ def get_files(target):
 @app.route('/')
 def index():
     files = get_files(app.config['UPLOAD_FOLDER'])
-    return render_template('index.html', **locals())
+    return render_template('index.html', **locals(), variable = UPLOAD_FOLDER)
 
 @app.route('/download/<path:filename>')
 def download(filename):
